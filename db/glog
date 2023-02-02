@@ -1,0 +1,72 @@
+Creating database 'esds_dev'...done (.53 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...Creating database 'esds_dev'...done (.50 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done
+Creating database 'esds_dev'...done (.49 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Creating database 'esds_dev'...done (.55 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done
+- pg_trgm...done
+- unaccent...done
+Creating database 'esds_dev'...done (5.63 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done
+- pg_trgm...done
+- unaccent...done
+Creating core tables...Creating database 'esds_dev'...done (.48 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done
+- pg_trgm...done
+- unaccent...done
+Creating core tables...Creating database 'esds_dev'...done (.50 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done
+- pg_trgm...done
+- unaccent...done
+Creating core tables...Creating database 'esds_dev'...done (.45 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done
+- pg_trgm...done
+- unaccent...done
+Creating core tables...Creating database 'esds_dev'...done (.51 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.09 sec)
+Installing extensions:
+- fuzzystrmatch...done
+- pg_trgm...done
+- unaccent...done
+Creating core tables...Creating database 'esds_dev'...done (.51 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done
+- pg_trgm...done
+- unaccent...done
+Creating core tables...Creating database 'esds_dev'...done (.51 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done
+- pg_trgm...done
+- unaccent...done
+Creating core tables...Creating database 'esds_dev'...done (.52 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done
+- pg_trgm...done
+- unaccent...done
+Creating core tables...done (.38 sec)
