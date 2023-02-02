@@ -1,10 +1,13 @@
 # Exotic Species Detection Service (ESDS)
 
-Application for the detection of exotic (introduced) occurrences of organisms in biodiversity occurrence data. Biodiversity observations are georeferenced observations of an organism at specific place and (usually) time. 
+
+## Overview
+
+Application for the detection of exotic (introduced) occurrences of organisms in biodiversity observation data. Biodiversity observations are georeferenced occurrences of an organism at specific place and time. 
 
 Species occurrence status is determined with reference to taxonomic checklists for political divisions (countries, states, counties) or other administrative regions, such as national parks and other protected areas.
 
-This is the application base directory. The main subdirectories are as follows:
+## Application directory structure
 
 ```
 |__admin/  Admin documents and applications
