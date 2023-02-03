@@ -7,12 +7,19 @@ Application for the detection of exotic (introduced) occurrences of organisms in
 
 Species occurrence status is determined with reference to taxonomic checklists for political divisions (countries, states, counties) or other administrative regions, such as national parks and other protected areas.
 
-## Application directory structure
+## Suggested application directory structure
 
 ```
-|__admin/  Admin documents and applications
-|__config/ Sensitive configuration parameters kept outside the main (public)
-|          application code directory.
-|__data/   Root data directory. Contains separate directories for user data amd  
-           application database raw data.
-|__src/    Main application code directory (this repository). 
+esds/       Application base directory
+|__admin/   Admin applications and documentation
+|__config/  Sensitive configuration parameter files. Keep  
+|           outside application code directory.
+|__data/    Data base directory
+|  |__db/   Application database raw reference data
+|  |__user/ User data (input, output)
+|__src/     Application code directory (=this repository)
+	|__api/  API code directory
+	|__db/   Database code directory (builds application database)
+	|  |__ sql/  DB application SQL files
+	|__sql/  Core application SQL files
+```
