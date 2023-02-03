@@ -70,3 +70,205 @@ Installing extensions:
 - pg_trgm...done
 - unaccent...done
 Creating core tables...done (.38 sec)
+Creating database 'esds_dev'...done (5.62 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.09 sec)
+Installing extensions:
+- fuzzystrmatch...done
+- pg_trgm...done
+- unaccent...done
+Creating core tables...done (.56 sec)
+Creating database 'esds_dev'...done (.45 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.08 sec)
+Creating core tables...done (.11 sec)
+Importing GNRS tables from DB gnrs_dev:
+- Dropping existing tables, if any...Creating database 'esds_dev'...done (.45 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.09 sec)
+Installing extensions:
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.08 sec)
+Creating core tables...done (.12 sec)
+Importing GNRS tables from DB gnrs_dev:
+- Dropping existing tables, if any...done (.14 sec)
+Creating database 'esds_dev'...done (.45 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.09 sec)
+Installing extensions:
+- fuzzystrmatch...done (.09 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.09 sec)
+Creating core tables...done (.11 sec)
+Importing GNRS tables from DB gnrs_dev:
+- Dropping existing tables, if any...done (.16 sec)
+- Creating dumpfile of tables from DB gnrs_dev...Creating database 'esds_dev'...done (.46 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.08 sec)
+Creating core tables...done (.12 sec)
+Importing GNRS tables from DB gnrs_dev:
+- Dropping existing tables, if any...done (.14 sec)
+- Creating dumpfile of tables from DB gnrs_dev...done (1.47 sec)
+Creating database 'esds_dev'...done (.45 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.08 sec)
+Creating core tables...done (.12 sec)
+Importing GNRS tables from DB gnrs_dev:
+- Dropping existing tables, if any...done (.15 sec)
+- Creating dumpfile of tables from DB gnrs_dev...done (.37 sec)
+- Importing tables from dumpfile...done (3.11 sec)
+Creating database 'esds_dev'...done (.47 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done (.09 sec)
+- pg_trgm...done (.08 sec)
+- unaccent...done (.08 sec)
+Creating core tables...done (.10 sec)
+Importing GNRS tables from DB gnrs_dev:
+-- Backing up existing table "meta"...done (.08 sec)
+- Dropping existing target tables, if any...done (.13 sec)
+- Creating dumpfile of tables from DB gnrs_dev...done (.37 sec)
+- Importing tables from dumpfile...done (3.07 sec)
+-- Renaming "meta" to "meta_gnrs"...Creating database 'esds_dev'...done (.46 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.09 sec)
+Installing extensions:
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.10 sec)
+- unaccent...done (.08 sec)
+Creating core tables...done (.10 sec)
+Importing GNRS tables from DB gnrs_dev:
+- Backing up existing table "meta"...done (.08 sec)
+- Dropping existing target tables, if any...done (.16 sec)
+- Creating dumpfile of tables from DB gnrs_dev...done (.47 sec)
+- Importing tables from dumpfile...Creating database 'esds_dev'...done (.47 sec)
+Changing owner to 'bien'...done (1.30 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.08 sec)
+Creating core tables...done (.11 sec)
+Importing GNRS tables from DB gnrs_dev:
+- Backing up existing table "meta"...done (.08 sec)
+Creating database 'esds_dev'...done (.45 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.08 sec)
+Creating core tables...done (.10 sec)
+Importing GNRS tables from DB gnrs_dev:
+- Backing up existing table "meta"...done (.08 sec)
+- Dropping existing target tables, if any...done (.14 sec)
+Creating database 'esds_dev'...done (.49 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.08 sec)
+Creating core tables...done (.10 sec)
+Importing GNRS tables from DB gnrs_dev:
+- Backing up existing table "meta"...done (.07 sec)
+- Dropping existing target tables, if any...done (.13 sec)
+Creating database 'esds_dev'...done (.46 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.08 sec)
+Creating core tables...done (.10 sec)
+Importing GNRS tables from DB gnrs_dev:
+- Backing up existing table "meta"...done (.08 sec)
+- Dropping existing target tables, if any...done (.15 sec)
+- Creating dumpfile of tables from DB gnrs_dev...done (.37 sec)
+- Importing tables from dumpfile...Creating database 'esds_dev'...done (.44 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.09 sec)
+Creating core tables...Creating database 'esds_dev'...done (.45 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.10 sec)
+Installing extensions:
+- fuzzystrmatch...done (.09 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.08 sec)
+Creating core data tables...Creating database 'esds_dev'...done (.49 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done (.09 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.08 sec)
+Importing GNRS tables from DB gnrs_dev:
+- Dropping existing target tables, if any...done (.08 sec)
+- Creating dumpfile of tables from DB gnrs_dev...done (.42 sec)
+- Importing tables from dumpfile...done (3.02 sec)
+-- Renaming "meta" to "meta_gnrs"...done (.07 sec)
+- Removing dumpfile...done (.01 sec)
+Creating core application tables...done (.11 sec)
+Creating database 'esds_dev'...done (4.67 sec)
+Changing owner to 'bien'...done (.07 sec)
+Granting permissions...done (.08 sec)
+Installing extensions:
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.08 sec)
+- unaccent...done (.08 sec)
+Importing political division tables from DB gnrs_dev:
+- Creating dumpfile of tables from DB gnrs_dev...done (.38 sec)
+- Importing tables from dumpfile...done (2.99 sec)
+-- Renaming "meta" to "meta_gnrs"...done (.07 sec)
+- Removing dumpfile...done (0 sec)
+Importing spatial tables from DB gadm:
+- Creating dumpfile of tables from DB gadm...done (155.57 sec)
+- Importing tables from dumpfile...Creating database 'esds_dev'...done (.46 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.09 sec)
+Installing extensions:
+- postgis...- fuzzystrmatch...done (.95 sec)
+- pg_trgm...done (.09 sec)
+- unaccent...done (.08 sec)
+Importing political division tables from DB gnrs_dev:
+- Creating dumpfile of tables from DB gnrs_dev...done (.42 sec)
+- Importing tables from dumpfile...done (3.15 sec)
+-- Renaming "meta" to "meta_gnrs"...done (.07 sec)
+- Removing dumpfile...done (0 sec)
+Importing spatial tables from DB gadm:
+- Creating dumpfile of tables from DB gadm...Creating database 'esds_dev'...done (.47 sec)
+Changing owner to 'bien'...done (.08 sec)
+Granting permissions...done (.09 sec)
+Installing extensions:
+- postgis...done (.68 sec)
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.08 sec)
+- unaccent...done (.08 sec)
+Importing political division tables from DB gnrs_dev:
+- Creating dumpfile of tables from DB gnrs_dev...done (.39 sec)
+- Importing tables from dumpfile...done (2.99 sec)
+-- Renaming "meta" to "meta_gnrs"...done (.08 sec)
+- Removing dumpfile...done (0 sec)
+Importing spatial tables from DB gadm:
+- Creating dumpfile of tables from DB gadm...done (43.51 sec)
+- Importing tables from dumpfile...- Renaming "meta" to "meta_gadm"...done (307.72 sec)
+- Removing dumpfile...done (.01 sec)
+Creating core application tables...done (.10 sec)

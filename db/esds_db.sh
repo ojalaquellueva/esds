@@ -51,9 +51,6 @@ source "${DIR}/params.sh"
 #source "$INCLUDES_DIR/startup_master.sh"
 source "${INCLUDES_DIR}/functions.sh"
 
-# Load database configuration file
-source "${CONFIG_DIR}/db_config.sh"
-
 # # Pseudo error log, to absorb screen echo during import
 # tmplog="/tmp/tmplog.txt"
 # echo "Error log
@@ -140,6 +137,7 @@ msg_conf="$(cat <<-EOF
 Run process '$pname' using the following parameters: 
 
 ${APP} DB:			$DB_APP
+GNRS DB:			$DB_GNRS
 GADM DB:			$DB_GADM
 Geonames DB:			$DB_GEONAMES
 Base directory:			$BASE_DIR
@@ -201,13 +199,22 @@ source "$INCLUDES_DIR/check_status.sh"
 
 echoi $e "Installing extensions:"
 
+# POSTGIS
+echoi $e -n "- postgis..."
+sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP -q << EOF
+\set ON_ERROR_STOP on
+DROP EXTENSION IF EXISTS postgis;
+CREATE EXTENSION postgis;
+EOF
+source "$INCLUDES_DIR/check_status.sh" 
+
 echoi $e -n "- fuzzystrmatch..."
 sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP -q << EOF
 \set ON_ERROR_STOP on
 DROP EXTENSION IF EXISTS fuzzystrmatch;
 CREATE EXTENSION fuzzystrmatch;
 EOF
-echoi $e "done"
+source "$INCLUDES_DIR/check_status.sh" 
 
 # For trigram fuzzy matching
 echoi $e -n "- pg_trgm..."
@@ -216,7 +223,7 @@ sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP -q <<
 DROP EXTENSION IF EXISTS pg_trgm;
 CREATE EXTENSION pg_trgm;
 EOF
-echoi $e "done"
+source "$INCLUDES_DIR/check_status.sh" 
 
 # For generating unaccented versions of text
 echoi $e -n "- unaccent..."
@@ -225,30 +232,82 @@ sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP -q <<
 DROP EXTENSION IF EXISTS unaccent;
 CREATE EXTENSION unaccent;
 EOF
-echoi $e "done"
-
+source "$INCLUDES_DIR/check_status.sh" 
 
 ############################################
-# Build core tables
+# Import GNRS tables
 ############################################
 
-echoi $e -n "Creating core tables..."
+echoi $e "Importing political division tables from DB $DB_GNRS:"
+
+# echoi $e -n "- Dropping existing target tables, if any..."
+# sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql  -d $DB_APP --set ON_ERROR_STOP=1 -q -c "DROP TABLE IF EXISTS meta, country, state_province, county_parish CASCADE" 
+# source "$INCLUDES_DIR/check_status.sh"  
+
+# Dump tables from source database
+echoi $e -n "- Creating dumpfile of tables from DB ${DB_GNRS}..."
+dumpfile="/tmp/gnrs_extract.sql"
+sudo -u postgres pg_dump --no-owner -t meta -t country -t state_province -t county_parish "$DB_GNRS" > $dumpfile
+source "$INCLUDES_DIR/check_status.sh"  
+
+# Import table from dumpfile to target db & schema
+echoi $e -n "- Importing tables from dumpfile..."
+PGOPTIONS='--client-min-messages=warning' psql --set ON_ERROR_STOP=1 $DB_APP < $dumpfile > /dev/null > "/tmp/tmplog.txt"
+source "$INCLUDES_DIR/check_status.sh"  
+
+echoi $e -n "- Renaming \"meta\" to \"meta_gnrs\"..."
+sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql  -d $DB_APP --set ON_ERROR_STOP=1 -q -c "ALTER TABLE meta RENAME TO meta_gnrs" 
+source "$INCLUDES_DIR/check_status.sh"  
+
+echoi $e -n "- Removing dumpfile..."
+rm $dumpfile
+source "$INCLUDES_DIR/check_status.sh"  
+
+############################################
+# Import GADM spatial tables
+############################################
+
+echoi $e "Importing spatial tables from DB $DB_GADM:"
+
+# echoi $e -n "- Dropping existing target tables, if any..."
+# sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql  -d $DB_APP --set ON_ERROR_STOP=1 -q -c "DROP TABLE IF EXISTS meta, gadm CASCADE" 
+# source "$INCLUDES_DIR/check_status.sh"  
+
+# Dump tables from source database
+echoi $e -n "- Creating dumpfile of tables from DB ${DB_GADM}..."
+dumpfile="/tmp/gadm_extract.sql"
+sudo -u postgres pg_dump --no-owner -t meta -t gadm "$DB_GADM" > $dumpfile
+source "$INCLUDES_DIR/check_status.sh"  
+
+# Import table from dumpfile to target db & schema
+echoi $e -n "- Importing tables from dumpfile..."
+PGOPTIONS='--client-min-messages=warning' psql --set ON_ERROR_STOP=1 $DB_APP < $dumpfile > /dev/null > "/tmp/tmplog.txt"
+source "$INCLUDES_DIR/check_status.sh"  
+
+echoi $e -n "- Renaming \"meta\" to \"meta_gadm\"..."
+sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql  -d $DB_APP --set ON_ERROR_STOP=1 -q -c "ALTER TABLE meta RENAME TO meta_gadm" 
+source "$INCLUDES_DIR/check_status.sh"  
+
+echoi $e -n "- Removing dumpfile..."
+rm $dumpfile
+source "$INCLUDES_DIR/check_status.sh"  
+
+############################################
+# Create core data tables
+############################################
+
+echoi $e -n "Creating core application tables..."
 PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/create_core_tables.sql
 source "$INCLUDES_DIR/check_status.sh"  
 
-echoi $e -n "Importing gnrs tables..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/import_gnrs_tables.sql
-source "$INCLUDES_DIR/check_status.sh"  
 
 
+	
 echo "EXITING script `basename "$BASH_SOURCE"`"; exit 0
 
 
 
 
-echoi $e -n "Importing GADM spatial data..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/import_gnrs_tables.sql
-source "$INCLUDES_DIR/check_status.sh"  
 
 echoi $e -n "Indexing core tables..."
 PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/create_indexes_core_tables.sql

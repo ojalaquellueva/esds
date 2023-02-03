@@ -72,15 +72,6 @@ state_province TEXT DEFAULT '',
 county_parish TEXT DEFAULT ''
 );
 
-DROP TABLE IF EXISTS country;
-CREATE TABLE country (
-country_id INTEGER NOT NULL PRIMARY KEY, 
-country TEXT NOT NULL,
-country_iso TEXT NOT NULL,
-country_iso_alpha3 TEXT DEFAULT NULL,
-country_fips TEXT DEFAULT NULL
-);
-
 -- poldiv type is also the name of the table
 -- to which FK poldiv_id points
 DROP TABLE IF EXISTS poldiv_source;
@@ -92,17 +83,6 @@ poldiv_type TEXT NOT NULL,
 source_id INTEGER NOT NULL, 
 checklist_type TEXT DEFAULT NULL,
 checklist_details TEXT DEFAULT NULL
-);
-
-DROP TABLE IF EXISTS state_province;
-CREATE TABLE state_province (
-state_province_id INTEGER NOT NULL PRIMARY KEY, 
-country TEXT DEFAULT NULL, 
-country_iso TEXT DEFAULT NULL, 
-state_province TEXT DEFAULT NULL, 
-state_province_ascii TEXT DEFAULT NULL, 
-state_province_code TEXT DEFAULT NULL, 
-state_province_code_unique TEXT DEFAULT NULL
 );
 
 DROP TABLE IF EXISTS cultspp;

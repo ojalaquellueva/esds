@@ -14,6 +14,15 @@ APP="ESDS"
 APP_NAME="Exotic Species Detection Service"
 app="${APP,,}"	# Lower case version of $APP
 
+# Name of application database to build
+DB_APP="esds_dev"
+
+# Names of required reference databases
+# Tables from these databases are imported to app DB
+DB_GNRS="gnrs_dev"		# Name of local GNRS database
+DB_GEONAMES="geonames" 	# Name of local Geonames database
+DB_GADM="gadm"			# Name of local GADM database
+
 # Configuration directory path, relative to this file
 # Omit trailing slash
 CONFIG_DIR="${wd}/../../config"
@@ -24,7 +33,7 @@ CONFIG_DIR="${wd}/../../config"
 # and documentation for this application, including the 
 # code directory & repo (this one).
 # Recommended location for SSCF is $BASE_DIR/config/
-source "${CONFIG_DIR}/server_config.sh";
+source "${CONFIG_DIR}/db_config.sh";
 
 # Uncomment to echo & confirm $BASE_DIR
 echo "BASE_DIR='${BASE_DIR}'"
