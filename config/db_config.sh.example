@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Database connection parameters
+# For production, keep these parameters outside script working directory
+# Edit db_config_path in params.sh accordingly
+
+#host='<host_name_or_ip>'
+DB_GVS='gvs'
+
+USER_ADMIN='<admin-level_user>'	# Full privileges
+USER_READ='<read-only_user>'	# SELECT only 
+USER='<main_app_user>'			# SELECT, UPDATE, DELETE 
+
+# GVS database user pwd
+# Needed for access by api (user www-data)
+# Recommend echo from external file, e.g.,
+# PWD_USER=$(cat /path/to/passwordfile)			
+PWD_USER="<the_password>"
+
+

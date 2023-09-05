@@ -3,7 +3,7 @@
 
 ## Overview
 
-Application for the detection of exotic (introduced) occurrences of organisms in biodiversity observation data. Biodiversity observations are georeferenced occurrences of an organism at specific place and time. 
+Application for the detection of exotic (introduced) or cultivated occurrences of organisms in biodiversity observation data.  
 
 Species occurrence status is determined with reference to taxonomic checklists for political divisions (countries, states, counties) or other administrative regions, such as national parks and other protected areas.
 
@@ -12,8 +12,8 @@ Species occurrence status is determined with reference to taxonomic checklists f
 ```
 esds/       Application base directory
 |__admin/   Admin applications and documentation
-|__config/  Sensitive configuration parameter files. Keep  
-|           outside application code directory.
+|__config/  Sensitive configuration parameter files. Keep outside 
+|           application code directory.
 |__data/    Data base directory
 |  |__db/   Application database raw reference data
 |  |__user/ User data (input, output)
