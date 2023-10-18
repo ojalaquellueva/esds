@@ -272,3 +272,117 @@ Importing spatial tables from DB gadm:
 - Importing tables from dumpfile...- Renaming "meta" to "meta_gadm"...done (307.72 sec)
 - Removing dumpfile...done (.01 sec)
 Creating core application tables...done (.10 sec)
+Creating database 'esds_dev'...done (2.92 sec)
+Changing owner to 'bien'...done (.17 sec)
+Granting permissions...done (.17 sec)
+Installing extensions:
+- postgis...done (1.37 sec)
+- fuzzystrmatch...done (.15 sec)
+- pg_trgm...done (.19 sec)
+- unaccent...done (.16 sec)
+Creating database 'esds_dev'...done (1.95 sec)
+Changing owner to 'bien'...done (.11 sec)
+Granting permissions...done (.12 sec)
+Installing extensions:
+- postgis...done (.94 sec)
+- fuzzystrmatch...done (.11 sec)
+- pg_trgm...done (.13 sec)
+- unaccent...done (.11 sec)
+Importing political division tables from DB gnrs_dev:
+- Creating dumpfile of tables from DB gnrs_dev...done (3.06 sec)
+- Importing tables from dumpfile...done (13.59 sec)
+- Renaming "meta" to "meta_gnrs"...done (.11 sec)
+- Removing dumpfile...done (.01 sec)
+Creating database 'esds_dev'...done (1.56 sec)
+Changing owner to 'bien'...done (.11 sec)
+Granting permissions...done (.15 sec)
+Installing extensions:
+- postgis...done (.89 sec)
+- fuzzystrmatch...done (.08 sec)
+- pg_trgm...done (.13 sec)
+- unaccent...done (.12 sec)
+Importing political division tables from DB gnrs_dev:
+- Creating dumpfile of tables from DB gnrs_dev...done (.42 sec)
+- Importing tables from dumpfile...done (15.31 sec)
+- Renaming "meta" to "meta_gnrs"...done (.11 sec)
+- Removing dumpfile...done (.01 sec)
+Importing spatial tables from DB gadm:
+- Creating dumpfile of tables from DB gadm...Creating database 'esds_dev'...done (13.84 sec)
+Changing owner to 'bien'...done (.19 sec)
+Granting permissions...done (.12 sec)
+Installing extensions:
+- postgis...done (2.30 sec)
+- fuzzystrmatch...done (.21 sec)
+- pg_trgm...done (.28 sec)
+- unaccent...done (.20 sec)
+Importing political division tables from DB gnrs_dev:
+- Creating dumpfile of tables from DB gnrs_dev...done (2.86 sec)
+- Importing tables from dumpfile...done (13.13 sec)
+- Renaming "meta" to "meta_gnrs"...done (.86 sec)
+- Removing dumpfile...done (.01 sec)
+Importing spatial tables from DB gadm:
+- Creating dumpfile of tables from DB gadm...done (353.04 sec)
+- Importing tables from dumpfile...done (594.32 sec)
+- Renaming "meta" to "meta_gadm"...done (960.50 sec)
+- Removing dumpfile...done (.91 sec)
+Creating core application tables...done (1.78 sec)
+Indexing core tables...Indexing core tables...Indexing core tables...Dropping indexes on core tables...done (.77 sec)
+Indexing core tables...Dropping indexes on core tables...done (.19 sec)
+Indexing core tables...Dropping indexes on core tables...done (.11 sec)
+Indexing core tables...Dropping indexes on core tables...Dropping indexes on core tables...done (.11 sec)
+Indexing core tables...Creating core application tables...Creating core application tables...done (1.00 sec)
+Dropping indexes on core tables...done (.09 sec)
+Indexing core tables...Creating core application tables...done (3.88 sec)
+Dropping indexes on core tables...done (.09 sec)
+Indexing core tables...done (3.26 sec)
+Importing political division tables from DB gnrs_2_2:
+- Dropping existing tables, if any...done (.35 sec)
+- Creating dumpfile of tables from DB gnrs_2_2...done (3.42 sec)
+- Importing tables from dumpfile...done (22.44 sec)
+- Removing dumpfile...done (.01 sec)
+Importing genus-family lookup table:
+Creating table...done (4.31 sec)
+- Importing data...Importing genus-family lookup table:
+Creating table...done (.85 sec)
+- Importing data...Importing genus-family lookup table:
+Creating table...done (.84 sec)
+- Importing data...Importing genus-family lookup table:
+Creating table...done (.84 sec)
+Uncompressing file...done (4.66 sec)
+- Importing data...Importing genus-family lookup table:
+Creating table...done (1.09 sec)
+Uncompressing file...done (.04 sec)
+- Importing data...Importing genus-family lookup table:
+Creating table...done (.59 sec)
+Uncompressing file...done (.04 sec)
+- Importing data...Importing genus-family lookup table:
+Creating table...done (.70 sec)
+Uncompressing file...done (3.13 sec)
+- Importing data...done (.30 sec)
+Importing genus-family lookup table:
+Creating table...done (.31 sec)
+Uncompressing file...Importing genus-family lookup table:
+Creating table...done (.23 sec)
+Uncompressing file...done (.04 sec)
+- Importing data...done (.30 sec)
+Importing genus-family lookup table:
+Creating table...done (.24 sec)
+Uncompressing file...done (.04 sec)
+- Importing data...done (.29 sec)
+Importing genus-family lookup table:
+- Creating table...done (.25 sec)
+- Uncompressing file...done (.04 sec)
+- Importing data...done (.29 sec)
+- Removing uncompressed file...done (.01 sec)
+Importing genus-family lookup table:
+- Creating table...Importing genus-family lookup table:
+- Creating table...done (.22 sec)
+- Uncompressing file...done (.04 sec)
+- Importing data...done (.28 sec)
+- Removing uncompressed file...done (.01 sec)
+- Removing sequence...Importing genus-family lookup table:
+- Creating table...done (.28 sec)
+- Uncompressing file...done (.04 sec)
+- Importing data...done (.27 sec)
+- Removing uncompressed file...done (0 sec)
+- Removing sequence...done (.43 sec)

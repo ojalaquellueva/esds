@@ -19,7 +19,7 @@ DB_APP="esds_dev"
 
 # Names of required reference databases
 # Tables from these databases are imported to app DB
-DB_GNRS="gnrs_dev"		# Name of local GNRS database
+DB_GNRS="gnrs_2_2"		# Name of local GNRS database
 DB_GEONAMES="geonames" 	# Name of local Geonames database
 DB_GADM="gadm"			# Name of local GADM database
 
@@ -42,6 +42,35 @@ echo "BASE_DIR='${BASE_DIR}'"
 # Over-ridden if email supplied with -m switch on command line
 EMAIL_DEF="bboyle@arizona.edu"
 EMAIL_DEF="ojalaquellueva@gmail.com"
+
+# Source codes
+# Short code of each checklist source to import
+# The code MUST be the same as:
+# a) suffix of the import directors (e.g., import_<source_code>) AND
+# b) subdirectory in the data directory in which raw data are 
+# stored AND
+# d) value of column source_name in table source.
+# One source code per line, no commas or quotes
+sources="
+enquist
+weakley
+mab
+ipane
+powo
+flbr
+conosur
+fwi
+mexico
+tropicos
+usda
+vascan
+newguinea
+"
+sources="
+enquist
+newguinea
+"
+
 
 #################################
 # You should not need to change

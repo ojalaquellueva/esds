@@ -24,8 +24,10 @@
 # Date created: 31 January 2023
 #########################################################################
 
+#echo "WARNING: Sections of this script are commented out!"
 : <<'COMMENT_BLOCK_x'
 COMMENT_BLOCK_x
+
 #echo "EXITING script `basename "$BASH_SOURCE"`"; exit 0
 
 ######################################################
@@ -131,6 +133,14 @@ if ! $notify; then
 	email_disp="[notifications off]"
 fi
 
+src_disp=""
+for src in $sources; do
+	src_disp=$src_disp", "$src
+done
+shopt -s extglob
+src_disp=${src_disp%, }
+src_disp=${src_disp#, }
+
 # Reset confirmation message
 msg_conf="$(cat <<-EOF
 
@@ -147,6 +157,7 @@ Admin db creator:		$db_user_admin_disp
 DB user:			$db_user_disp
 Additional read-only DB user:	$db_user_read_disp
 Notifications to:		$email_disp
+Checklist sources: 		$src_disp
 
 EOF
 )"		
@@ -163,6 +174,12 @@ source "$INCLUDES_DIR/start_process2.sh"
 # needed below. Should remain in effect for all
 # sudo commands in this script, regardless of sudo timeout
 sudo pwd >/dev/null
+
+
+
+echo "WARNING: Sections of this script are commented out!"
+: <<'COMMENT_BLOCK_1'
+
 
 ############################################
 # Create database in admin role & reassign
@@ -240,9 +257,9 @@ source "$INCLUDES_DIR/check_status.sh"
 
 echoi $e "Importing political division tables from DB $DB_GNRS:"
 
-# echoi $e -n "- Dropping existing target tables, if any..."
-# sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql  -d $DB_APP --set ON_ERROR_STOP=1 -q -c "DROP TABLE IF EXISTS meta, country, state_province, county_parish CASCADE" 
-# source "$INCLUDES_DIR/check_status.sh"  
+echoi $e -n "- Dropping existing target tables, if any..."
+sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql  -d $DB_APP --set ON_ERROR_STOP=1 -q -c "DROP TABLE IF EXISTS meta, country, state_province, county_parish CASCADE" 
+source "$INCLUDES_DIR/check_status.sh"  
 
 # Dump tables from source database
 echoi $e -n "- Creating dumpfile of tables from DB ${DB_GNRS}..."
@@ -300,30 +317,103 @@ echoi $e -n "Creating core application tables..."
 PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/create_core_tables.sql
 source "$INCLUDES_DIR/check_status.sh"  
 
-
-
-	
-echo "EXITING script `basename "$BASH_SOURCE"`"; exit 0
-
-
-
-
+echoi $e -n "Dropping indexes on core tables..."
+PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/drop_indexes_core_tables.sql
+source "$INCLUDES_DIR/check_status.sh"  
 
 echoi $e -n "Indexing core tables..."
 PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/create_indexes_core_tables.sql
 source "$INCLUDES_DIR/check_status.sh"  
 
+############################################
+# Import political division tables from 
+# GNRS database
+############################################
+
+echoi $e "Importing political division tables from DB $DB_GNRS:"
+
+echoi $e -n "- Dropping existing tables, if any..."
+sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql  -d $DB_APP --set ON_ERROR_STOP=1 -q -c "DROP TABLE IF EXISTS country, country_name, state_province, state_province_name, county_parish, county_parish_name CASCADE" 
+source "$INCLUDES_DIR/check_status.sh"  
+
+# Dump tables from source database
+echoi $e -n "- Creating dumpfile of tables from DB ${DB_GNRS}..."
+dumpfile="/tmp/gnrs_extract.sql"
+sudo -u postgres pg_dump --no-owner -t country -t country_name -t state_province -t state_province_name -t county_parish -t county_parish_name "$DB_GNRS" > $dumpfile
+source "$INCLUDES_DIR/check_status.sh"  
+
+# Import table from dumpfile to target db & schema
+echoi $e -n "- Importing tables from dumpfile..."
+PGOPTIONS='--client-min-messages=warning' psql --set ON_ERROR_STOP=1 $DB_APP < $dumpfile > /dev/null > "/tmp/tmplog.txt"
+source "$INCLUDES_DIR/check_status.sh"  
+
+echoi $e -n "- Removing dumpfile..."
+rm $dumpfile
+source "$INCLUDES_DIR/check_status.sh"  
 
 
 
 
+COMMENT_BLOCK_1
 
+
+############################################
+# Import genus-family lookup table from 
+# TNRS database
+#
+# Assumes:
+#   * zip archive gf_lookup.txt.zip in dir data/
+#   * Archive unzips to gf_lookup.txt
+############################################
+
+echoi $e "Importing genus-family lookup table:"
+
+gf_file="gf_lookup.txt"
+gf_file_compressed=$gf_file".zip"
+
+echoi $e -n "- Creating table..."
+PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/create_gf_lookup.sql
+source "$INCLUDES_DIR/check_status.sh"  
+
+echoi $e -n "- Uncompressing file..."
+unzip -q -o data/${gf_file_compressed} -d data
+source "$INCLUDES_DIR/check_status.sh"  
+
+echoi $e -n "- Importing data..."
+sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql  -d $DB_APP --set ON_ERROR_STOP=1 -q -c "\copy gf_lookup from 'data/${gf_file}' with delimiter E'\t' csv header" 
+source "$INCLUDES_DIR/check_status.sh"  
+
+echoi $e -n "- Removing uncompressed file..."
+rm data/${gf_file}
+source "$INCLUDES_DIR/check_status.sh"  
+
+echoi $e -n "- Removing sequence..."
+sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql  -d $DB_APP --set ON_ERROR_STOP=1 -q -c "DROP SEQUENCE IF EXISTS gf_lookup_gf_lookup_id_seq CASCADE" 
+source "$INCLUDES_DIR/check_status.sh"  
+
+############################################
+# Load checklist sources
+############################################
+
+echoi $e "Importing checklist sources:"
+
+for src in $sources; do
+	echoi $e "-----------------------------------"
+	echoi $e "Source=$src"
+	source "$DIR/import/"$src"/import.sh"
+	source "$DIR/prepare_staging/prepare_staging.sh"
+	source "$DIR/load_core_db/load_core_db.sh"
+done
 
 
 
 
 
 echo "EXITING script `basename "$BASH_SOURCE"`"; exit 0
+
+
+
+
 
 ############################################
 # Create output data dictionary

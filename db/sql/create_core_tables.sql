@@ -16,7 +16,7 @@ publication TEXT DEFAULT NULL,
 logo_path TEXT DEFAULT NULL 
 );
 
-DROP TABLE IF EXISTS source;
+DROP TABLE IF EXISTS source CASCADE;
 CREATE TABLE source (
 source_id SERIAL NOT NULL PRIMARY KEY,
 source_name TEXT NOT NULL,
@@ -28,7 +28,10 @@ source_version TEXT DEFAULT NULL,
 source_release_date DATE DEFAULT NULL,
 date_accessed DATE DEFAULT NULL,
 citation TEXT DEFAULT NULL,
-logo_path TEXT DEFAULT NULL
+logo_path TEXT DEFAULT NULL,
+is_comprehensive smallint DEFAULT NULL,
+regional_scope TEXT DEFAULT 'country',
+taxonomic_scope TEXT DEFAULT NULL
 );
 
 DROP TABLE IF EXISTS collaborator;
@@ -146,15 +149,3 @@ is_cultivated_taxon SMALLINT DEFAULT 0,
 is_in_cache INTEGER DEFAULT 0,
 user_id INTEGER DEFAULT NULL
 );
-
--- Lookup of family for a genus
--- Indexes added after loading
-DROP TABLE IF EXISTS gf_lookup;
-CREATE TABLE gf_lookup (
-gf_lookup_id SERIAL NOT NULL PRIMARY KEY, 
-genus TEXT NOT NULL,
-family TEXT NOT NULL,
-source TEXT NOT NULL
-)
-;
-
