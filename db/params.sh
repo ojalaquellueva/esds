@@ -67,7 +67,6 @@ vascan
 newguinea
 "
 sources="
-enquist
 newguinea
 "
 

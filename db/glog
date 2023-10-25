@@ -386,3 +386,989 @@ Importing genus-family lookup table:
 - Importing data...done (.27 sec)
 - Removing uncompressed file...done (0 sec)
 - Removing sequence...done (.43 sec)
+Importing genus-family lookup table:
+- Creating table...done (6.55 sec)
+- Uncompressing file...done (.13 sec)
+- Importing data...done (.26 sec)
+- Removing uncompressed file...done (.01 sec)
+- Removing sequence...done (.30 sec)
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...Importing genus-family lookup table:
+- Creating table...done (.44 sec)
+- Uncompressing file...done (.04 sec)
+- Importing data...done (.29 sec)
+- Removing uncompressed file...done (.01 sec)
+- Removing sequence...done (.38 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...done (.45 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...done (.73 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...done (.53 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...done (.40 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...done (.42 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...done (1.03 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...done (.41 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...done (6.67 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...done (.50 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific...done (.54 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.33 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.48 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.38 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (4.32 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.28 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.37 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist.csv' --> newguinea_raw:
+--- Importing data...done (.19 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.34 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist.csv' --> newguinea_raw:
+--- Importing data...done (.19 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.31 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist_sample.csv' --> newguinea_raw:
+--- Importing data...done (.10 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.38 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist.csv' --> newguinea_raw:
+--- Importing data...done (.19 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.42 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.36 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.53 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.46 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist.csv' --> newguinea_raw:
+--- Importing data...done (.19 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.36 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.40 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.46 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist.csv' --> newguinea_raw:
+--- Importing data...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables:
+-- Source-specific tables...done (.36 sec)
+- Importing raw data to table:
+-- 'newGuinea_checklist.csv' --> newguinea_raw:
+--- Importing data...done (.19 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.35 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.19 sec)
+Installing functions:
+Function f_empty_text_to_null...done (7.30 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.40 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+Installing functions:
+Function f_empty_text_to_null...done (.12 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.38 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+Installing functions:
+Function f_empty_text_to_null...done (.12 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.61 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty_text_to_null...Installing functions:
+Function f_empty2null...done (.13 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.40 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.20 sec)
+-- Setting empty strings to null...done (.13 sec)
+Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.36 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...done (.12 sec)
+Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.42 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...done (.12 sec)
+Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.35 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.39 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.12 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.39 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.08 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.45 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.19 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.43 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.12 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.44 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.20 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.98 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.20 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.43 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.19 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.38 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.20 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.38 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.41 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.18 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.60 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.38 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.92 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.16 sec)
+-- Setting empty strings to null...done (.12 sec)
+Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.34 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.36 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.17 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.35 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.36 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...done (.13 sec)
+Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.33 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.20 sec)
+-- Setting empty strings to null...done (.12 sec)
+Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.32 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.22 sec)
+-- Setting empty strings to null...Installing functions:
+Function f_empty2null...done (.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.35 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (5.22 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.17 sec)
+-- Setting empty strings to null...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.71 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.22 sec)
+-- Setting empty strings to null...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.52 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.19 sec)
+-- Setting empty strings to null...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.34 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.34 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...done (.14 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.44 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.20 sec)
+-- Setting empty strings to null...done (.12 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.82 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.18 sec)
+-- Setting empty strings to null...done (.12 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.34 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.22 sec)
+-- Setting empty strings to null...done (.12 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (6.36 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.23 sec)
+-- Setting empty strings to null...done (.13 sec)
+- Extracting country and state-level data to table ""...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.33 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...done (.10 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.36 sec)
+- Importing raw data:
+-- 'newGuinea_checklist.csv' --> newguinea_raw...done (.20 sec)
+-- Setting empty strings to null...done (.13 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.20 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.43 sec)
+- Importing raw data:
+-- File 'newGuinea_checklist.csv' --> table newguinea_raw...done (.21 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.19 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.36 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.20 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.19 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (4.36 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.18 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.18 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.32 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.18 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.17 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.31 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.18 sec)
+-- Setting empty strings to null...done (.13 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.17 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...done (.32 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (5.14 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.24 sec)
+-- Setting empty strings to null...done (.13 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.18 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.35 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.20 sec)
+-- Setting empty strings to null...done (.13 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.15 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...done (.72 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.34 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.19 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.17 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...done (.88 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.30 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.19 sec)
+-- Setting empty strings to null...done (.13 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.18 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...done (1.16 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.31 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.18 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.18 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...done (2.11 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.30 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.20 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.18 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.31 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.18 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.18 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...done (.53 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.33 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.18 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.14 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...done (.85 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.35 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.18 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.18 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.38 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.19 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.17 sec)
+- Standaridizing raw data:
+- Infering taxon ranks...done (1.57 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (10.22 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.23 sec)
+-- Setting empty strings to null...done (.13 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.18 sec)
+- Standaridizing raw data:
+- Extracting infraspecific rank indicators...done (1.77 sec)
+- Standardizing taxon ranks...done (.20 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.50 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.19 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.17 sec)
+- Standaridizing raw data:
+- Extracting infraspecific rank indicators...done (1.30 sec)
+- Standardizing taxon ranks...done (.19 sec)
+- Indexing raw data table...done (.27 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (4.84 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.18 sec)
+-- Setting empty strings to null...done (.09 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.17 sec)
+- Standaridizing raw data:
+- Extracting infraspecific rank indicators...done (1.79 sec)
+- Standardizing taxon ranks...done (.20 sec)
+- Indexing raw data table...done (.26 sec)
+- Loading raw data to staging table:
+- Creating table "distribution_staging"...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.30 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.18 sec)
+-- Setting empty strings to null...done (.09 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.16 sec)
+- Standaridizing raw data:
+- Extracting infraspecific rank indicators...done (1.28 sec)
+- Standardizing taxon ranks...done (.20 sec)
+- Indexing raw data table...done (.33 sec)
+- Loading raw data to staging table:
+- Creating table "distribution_staging"...done (.22 sec)
+- Indexing staging table...done (.18 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.39 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.16 sec)
+-- Setting empty strings to null...done (.12 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.18 sec)
+- Standaridizing raw data:
+- Extracting infraspecific rank indicators...done (1.81 sec)
+- Standardizing taxon ranks...done (.20 sec)
+- Indexing raw data table...done (.29 sec)
+- Loading raw data to staging table:
+- Creating table "distribution_staging"...done (.40 sec)
+- Indexing staging table...done (.20 sec)
+- Loading staging table...done (.96 sec)
+
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (3.83 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.17 sec)
+-- Setting empty strings to null...done (.13 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.17 sec)
+- Standaridizing raw data:
+- Extracting infraspecific rank indicators...done (3.89 sec)
+- Standardizing taxon ranks...done (.20 sec)
+- Indexing raw data table...done (.48 sec)
+- Loading raw checklist data to staging table:
+- Creating table "distribution_staging"...done (.30 sec)
+- Indexing staging table...done (.30 sec)
+- Loading staging table...done (2.89 sec)
+- Loading checklist region metadata to staging table:
+- Preparing table of comprehensive checklist states...
+Importing checklist sources:
+-----------------------------------
+Source=newguinea
+Importing source 'newguinea'
+- Creating raw data tables...done (.35 sec)
+- Importing raw data:
+-- File "newGuinea_checklist.csv" --> table "newguinea_raw"...done (.18 sec)
+-- Setting empty strings to null...done (.13 sec)
+- Extracting country and state-level data to table "newguinea_raw_final"...done (.17 sec)
+- Standaridizing raw data:
+- Extracting infraspecific rank indicators...done (1.72 sec)
+- Standardizing taxon ranks...done (.20 sec)
+- Indexing raw data table...done (.94 sec)
+- Loading raw checklist data to staging table:
+- Creating table "distribution_staging"...done (.61 sec)
+- Indexing staging table...done (1.37 sec)
+- Loading staging table...done (1.66 sec)
+- Loading checklist region metadata to staging table:
+- Preparing table of comprehensive checklist states...done (1.15 sec)
+- Creating table "poldiv_source_staging"...done (4.78 sec)
+- Loading comprehensive country checklists...

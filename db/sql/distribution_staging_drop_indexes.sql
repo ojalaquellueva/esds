@@ -1,0 +1,13 @@
+DROP INDEX IF EXISTS distribution_staging_country_idx;
+DROP INDEX IF EXISTS distribution_staging_county_parish_idx;
+DROP INDEX IF EXISTS distribution_staging_cult_status_idx;
+DROP INDEX IF EXISTS distribution_staging_family_idx;
+DROP INDEX IF EXISTS distribution_staging_genus_idx;
+DROP INDEX IF EXISTS distribution_staging_native_status_details_idx;
+DROP INDEX IF EXISTS distribution_staging_native_status_idx;
+DROP INDEX IF EXISTS distribution_staging_poldiv_full_idx;
+DROP INDEX IF EXISTS distribution_staging_source_name_idx;
+DROP INDEX IF EXISTS distribution_staging_species_idx;
+DROP INDEX IF EXISTS distribution_staging_state_province_idx;
+DROP INDEX IF EXISTS distribution_staging_taxon_idx;
+DROP INDEX IF EXISTS distribution_staging_taxon_rank_idx;

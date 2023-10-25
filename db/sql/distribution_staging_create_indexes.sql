@@ -1,0 +1,26 @@
+CREATE INDEX distribution_staging_country_idx
+	ON distribution_staging (country);
+CREATE INDEX distribution_staging_county_parish_idx
+	ON distribution_staging (county_parish);
+CREATE INDEX distribution_staging_cult_status_idx
+	ON distribution_staging (cult_status);
+CREATE INDEX distribution_staging_family_idx
+	ON distribution_staging (family);
+CREATE INDEX distribution_staging_genus_idx
+	ON distribution_staging (genus);
+CREATE INDEX distribution_staging_native_status_details_idx
+	ON distribution_staging (native_status_details);
+CREATE INDEX distribution_staging_native_status_idx
+	ON distribution_staging (native_status);
+CREATE INDEX distribution_staging_poldiv_full_idx
+	ON distribution_staging (poldiv_full);
+CREATE INDEX distribution_staging_source_name_idx
+	ON distribution_staging (source_name);
+CREATE INDEX distribution_staging_species_idx
+	ON distribution_staging (species);
+CREATE INDEX distribution_staging_state_province_idx
+	ON distribution_staging (state_province);
+CREATE INDEX distribution_staging_taxon_idx
+	ON distribution_staging (taxon);
+CREATE INDEX distribution_staging_taxon_rank_idx
+	ON distribution_staging (taxon_rank);

@@ -214,6 +214,10 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO $USER_READ;
 EOF
 source "$INCLUDES_DIR/check_status.sh" 
 
+############################################
+# Install extensions and custom functions
+############################################
+
 echoi $e "Installing extensions:"
 
 # POSTGIS
@@ -225,6 +229,7 @@ CREATE EXTENSION postgis;
 EOF
 source "$INCLUDES_DIR/check_status.sh" 
 
+# Fuzzy matching
 echoi $e -n "- fuzzystrmatch..."
 sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP -q << EOF
 \set ON_ERROR_STOP on
@@ -233,7 +238,7 @@ CREATE EXTENSION fuzzystrmatch;
 EOF
 source "$INCLUDES_DIR/check_status.sh" 
 
-# For trigram fuzzy matching
+# Trigram fuzzy matching
 echoi $e -n "- pg_trgm..."
 sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP -q << EOF
 \set ON_ERROR_STOP on
@@ -242,7 +247,7 @@ CREATE EXTENSION pg_trgm;
 EOF
 source "$INCLUDES_DIR/check_status.sh" 
 
-# For generating unaccented versions of text
+# Generate unaccented versions of text
 echoi $e -n "- unaccent..."
 sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP -q << EOF
 \set ON_ERROR_STOP on
@@ -250,6 +255,12 @@ DROP EXTENSION IF EXISTS unaccent;
 CREATE EXTENSION unaccent;
 EOF
 source "$INCLUDES_DIR/check_status.sh" 
+
+echoi $e "Installing functions:"
+
+echoi $e -n "- f_empty2null..."
+sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/f_empty2null.sql 
+source "$INCLUDES_DIR/check_status.sh"  
 
 ############################################
 # Import GNRS tables
@@ -351,12 +362,6 @@ echoi $e -n "- Removing dumpfile..."
 rm $dumpfile
 source "$INCLUDES_DIR/check_status.sh"  
 
-
-
-
-COMMENT_BLOCK_1
-
-
 ############################################
 # Import genus-family lookup table from 
 # TNRS database
@@ -391,26 +396,37 @@ echoi $e -n "- Removing sequence..."
 sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql  -d $DB_APP --set ON_ERROR_STOP=1 -q -c "DROP SEQUENCE IF EXISTS gf_lookup_gf_lookup_id_seq CASCADE" 
 source "$INCLUDES_DIR/check_status.sh"  
 
+
+
+
+
+COMMENT_BLOCK_1
+
+
+
+
+
 ############################################
 # Load checklist sources
 ############################################
 
+echoi $e ""
 echoi $e "Importing checklist sources:"
 
 for src in $sources; do
 	echoi $e "-----------------------------------"
 	echoi $e "Source=$src"
 	source "$DIR/import/"$src"/import.sh"
-	source "$DIR/prepare_staging/prepare_staging.sh"
-	source "$DIR/load_core_db/load_core_db.sh"
-done
-
-
 
 
 
 echo "EXITING script `basename "$BASH_SOURCE"`"; exit 0
 
+
+
+	source "$DIR/prepare_staging/prepare_staging.sh"
+	source "$DIR/load_core_db/load_core_db.sh"
+done
 
 
 
