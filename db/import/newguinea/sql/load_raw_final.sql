@@ -25,7 +25,7 @@ FROM :tbl_raw
 WHERE "png"='y'
 ;
 
--- Indonesia: Papua
+-- Indonesia: Papua (gadm name_1='Papua')
 INSERT INTO :tbl_raw_final (
 taxon,
 country,
@@ -48,7 +48,7 @@ FROM :tbl_raw
 WHERE "idn"='y'
 ;
 
--- Indonesia: West Papua
+-- Indonesia: West Papua (gadm name_1='Papua Barat')
 INSERT INTO :tbl_raw_final (
 taxon,
 country,

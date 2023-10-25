@@ -92,12 +92,14 @@ cclist_countries="
 'Papua New Guinea'
 ";
 
+# Extract list of comprehensive checklist states from raw data?
+# Set to true ("t") only if coverage is comprehensive for ALL state-level 
+# political divisions in raw data (=GADM admin_1)
+# Set to false ("f") or any other value to skip this step
+extract_cclist_states="t"
+
 # Replace previous records for this source?
 # VERY IMPORTANT
 # Set=true to replace all previous records for this source.
 # Set=false to keep existing records (name+author) and add new records only.
 replace=true;
-
-# True to drop raw data and intermediate tables, false to drop
-drop_raw=false;
-

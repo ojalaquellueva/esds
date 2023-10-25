@@ -157,6 +157,7 @@ Admin db creator:		$db_user_admin_disp
 DB user:			$db_user_disp
 Additional read-only DB user:	$db_user_read_disp
 Notifications to:		$email_disp
+Raw data action:		$raw_data_action
 Checklist sources: 		$src_disp
 
 EOF
@@ -406,6 +407,22 @@ COMMENT_BLOCK_1
 
 
 
+
+############################################
+# Create staging schema if requested
+############################################
+
+if [[ "$raw_data_action" == "move" ]]; then
+	echoi $e -n "Creating staging schema..."
+	sudo -u postgres PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP -q << EOF
+	\set ON_ERROR_STOP on
+	DROP SCHEMA IF EXISTS staging CASCADE;
+	CREATE SCHEMA staging;
+ 	ALTER SCHEMA staging OWNER TO $USER;
+EOF
+	source "$INCLUDES_DIR/check_status.sh" 
+fi
+
 ############################################
 # Load checklist sources
 ############################################
@@ -415,8 +432,8 @@ echoi $e "Importing checklist sources:"
 
 for src in $sources; do
 	echoi $e "-----------------------------------"
-	echoi $e "Source=$src"
 	source "$DIR/import/"$src"/import.sh"
+	source "$DIR/prepare_staging.sh"
 
 
 
@@ -424,7 +441,6 @@ echo "EXITING script `basename "$BASH_SOURCE"`"; exit 0
 
 
 
-	source "$DIR/prepare_staging/prepare_staging.sh"
 	source "$DIR/load_core_db/load_core_db.sh"
 done
 

@@ -48,7 +48,7 @@ source "${DIR_LOCAL}/params.sh"
 # Main
 #########################################################################
 
-echoi $e "Importing source '$src'"
+echoi $e "Source='$src'"
 
 ######################################################
 # Import raw data
@@ -113,7 +113,7 @@ PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 
 source "$DIR/../includes/check_status.sh"
 
 ######################################################
-# Load raw checklist data to staging table
+# Load raw checklist data to staging
 ######################################################
 
 echoi $e "- Loading raw checklist data to staging table:"
@@ -123,31 +123,27 @@ echoi $e -n "- Creating table \"distribution_staging\"..."
 PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/create_distribution_staging.sql
 source "$DIR/../includes/check_status.sh"
 
+# Using generic version as raw data already standardized
+echoi $e -n "- Loading checklist data to staging table..."
+PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v tbl_raw_generic=$tbl_raw_final -v src=$src -f $DIR/sql/load_distribution_staging.sql
+source "$DIR/../includes/check_status.sh"
+
 echoi $e -n "- Indexing staging table..."
 PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/distribution_staging_create_indexes.sql
 source "$DIR/../includes/check_status.sh"
 
-# Using generic version as raw data already standardized
-echoi $e -n "- Loading staging table..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v tbl_raw_generic=$tbl_raw_final -v src=$src -f $DIR/sql/load_distribution_staging.sql
-source "$DIR/../includes/check_status.sh"
-
 ######################################################
-# Load checklist region metadata to staging table
+# Load checklist region metadata to staging
 ######################################################
 
-echoi $e "- Loading checklist region metadata to staging table:"
+echoi $e "- Loading checklist metadata to staging table:"
 
-echoi $e -n "- Preparing table of comprehensive checklist states..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v tbl_raw_generic=$tbl_raw_final -v tbl_cclist_states="${src}_cclist_states" -f $DIR/sql/prepare_cc_list_states.sql
-source "$DIR/../includes/check_status.sh"
-
-echoi $e -n "- Creating table \"poldiv_source_staging\"..."
+echoi $e -n "-- Creating table \"poldiv_source_staging\"..."
 PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -f $DIR/sql/create_poldiv_source_staging.sql
 source "$DIR/../includes/check_status.sh"
 
-echoi $e -n "- Loading comprehensive country checklists..."
-if [ $cclist_countries == "" ]; then
+echoi $e -n "-- Loading comprehensive checklists countries..."
+if [[ "$cclist_countries" == "" ]]; then
 	cclist_countries_inlist="'arbitrarynonmatchingvalue'";
 else
 	cclist_countries_inlist=$cclist_countries;
@@ -155,108 +151,41 @@ fi
 PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v src=$src -v source_name_full="${source_name_full}" -v cclist_countries_inlist="${cclist_countries_inlist}" -f $DIR/sql/load_poldiv_source_staging_countries.sql
 source "$DIR/../includes/check_status.sh"
 
-# Careful: usage is -v foo, not -v $foo!
-if [[ -v cclist_states_from_country ]]; then
+echoi $e -n "-- Loading comprehensive checklist states"
 
-	if [ $cclist_states_from_country == "t" ]; then
-		echoi $e -n "- Loading comprehensive state checklists from list..."
-		PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v src=$src -v source_name_full="${source_name_full}" -v cclist_countries_inlist="${cclist_countries_inlist}" -f $DIR/sql/load_poldiv_source_staging_state_checklists_from_list.sql
-		source "$DIR/../includes/check_status.sh"
-	fi
-
-elif [ ! "$tbl_cclist_states" == "" ]; then
-	tbl_cclist_states_expected="${src}_cclist_states"
+if [[ "$cclist_states_from_country" == "t" ]]; then
+	echoi $e -n " from list..."
+	PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v src=$src -v source_name_full="${source_name_full}" -v cclist_countries_inlist="${cclist_countries_inlist}" -f $DIR/sql/load_poldiv_source_staging_state_checklists_from_list.sql
+	source "$DIR/../includes/check_status.sh"
+elif [[ "$extract_cclist_states" == "t" ]]; then
+	tbl_cclist_states="${src}_cclist_states"
+	echoi $e ":"	
+	echoi $e -n "--- Extracting states from raw data to table \"$tbl_cclist_states\"..."
+	PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v tbl_raw_generic=$tbl_raw_final -v tbl_cclist_states=$tbl_cclist_states -f $DIR/sql/prepare_cc_list_states.sql
+	source "$DIR/../includes/check_status.sh"
 	
-	# May need to test for existence of $tbl_cclist_states
-	# See: load_poldiv_source_staging.inc in NSR repo
-	echoi $e -n "- Loading comprehensive state checklists from table \"$tbl_cclist_states\"..."
+	echoi $e -n "--- Loading states to staging table..."
 	PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v src=$src -v source_name_full="${source_name_full}" -v tbl_cclist_states=$tbl_cclist_states -f $DIR/sql/load_poldiv_source_staging_state_checklists_from_table.sql
 	source "$DIR/../includes/check_status.sh"
+else
+	echoi $e "...not applicable for this source (skipping)"
 fi
 	
-
-
-
-
-
-
-
-
-echo "EXITING script `basename "$BASH_SOURCE"`"; exit 0
-
-
-
-
-
-# Add additional validation & scrubbing fields to raw data table
-echoi $e -n "- Altering raw data table structure..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v sch=$dev_schema -v tbl_raw=$tbl_raw -f $DIR_LOCAL/sql/alter_raw.sql
-source "$DIR/../includes/check_status.sh"
-
-echoi $e "- Processing dates:"
-
-echoi $e -n "-- Populating integer Y, M, D columns..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v sch=$dev_schema -v tbl_raw=$tbl_raw -f $DIR_LOCAL/sql/populate_raw_ymd.sql
-source "$DIR/../includes/check_status.sh"
-
-##################################
-# Correct integer Y, M, D columns 
-# for eventDate
-##################################
-y_col="eventdate_yr"			# Name of integer year column
-m_col="eventdate_mo"			# Name of integer month column
-d_col="eventdate_dy"				# Name of integer day column
-y_idx=$tbl"_"$y_col"_idx"	# Name of index on integer year column
-m_idx=$tbl"_"$m_col"_idx"	# Name of index on integer month column
-d_idx=$tbl"_"$d_col"_idx"	# Name of index on integer day column
-
-echoi $e -n "-- Correcting dates from column \"eventDate\"..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v sch=$dev_schema -v tbl=$tbl_raw -v y_col=$y_col -v m_col=$m_col -v d_col=$d_col -v y_idx=$y_idx -v m_idx=$m_idx -v d_idx=$d_idx -f $DIR/../import/sql/correct_ymd.sql
-source "$DIR/../includes/check_status.sh"
-
-##################################
-# Correct integer Y, M, D columns 
-# for dateidentified
-##################################
-y_col="dateidentified_yr"			# Name of integer year column
-m_col="dateidentified_mo"			# Name of integer month column
-d_col="dateidentified_dy"				# Name of integer day column
-y_idx=$tbl"_"$y_col"_idx"	# Name of index on integer year column
-m_idx=$tbl"_"$m_col"_idx"	# Name of index on integer month column
-d_idx=$tbl"_"$d_col"_idx"	# Name of index on integer day column
-
-echoi $e -n "-- Correcting dates from column \"dateIdentified\"..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v sch=$dev_schema -v tbl=$tbl_raw -v y_col=$y_col -v m_col=$m_col -v d_col=$d_col -v y_idx=$y_idx -v m_idx=$m_idx -v d_idx=$d_idx -f $DIR/../import/sql/correct_ymd.sql
-source "$DIR/../includes/check_status.sh"
-
-echoi $e -n "- Indexing raw data..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v sch=$dev_schema -v tbl_raw=$tbl_raw -f $DIR_LOCAL/sql/index_raw.sql
-source "$DIR/../includes/check_status.sh"
-
 ######################################################
-# Load raw data to staging tables
+# Clean up: delete raw data if requested
 ######################################################
 
-echoi $e -n "- Creating staging tables..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v sch=$dev_schema -f $DIR/../import/sql/create_staging.sql
-source "$DIR/../includes/check_status.sh"
+echoi $e -n "- Cleaning up..."
 
-echoi $e "- Loading staging tables:"
-
-echoi $e -n "-- vfoi_staging..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v sch=$dev_schema -v src=$src -v tbl_raw=$tbl_raw -v psrc_list="$psrc_list" -f $DIR_LOCAL/sql/load_staging_vfoi.sql
-source "$DIR/../includes/check_status.sh"
-
-echoi $e -n "-- datasource_staging..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v sch=$dev_schema -v tbl_raw=$tbl_raw -f $DIR_LOCAL/sql/load_datasource_staging.sql
-source "$DIR/../includes/check_status.sh"
-
-echoi $e -n "- Populating FK to datasource_staging..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v sch=$dev_schema -v tbl_raw=$tbl_raw -f $DIR_LOCAL/sql/update_datasource_fks.sql
-source "$DIR/../includes/check_status.sh"
-
-echoi $e -n "- Dropping raw data indexes..."
-PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v sch=$dev_schema -v tbl_raw=$tbl_raw -f $DIR_LOCAL/sql/drop_indexes_raw.sql
-source "$DIR/../includes/check_status.sh"
-
-
+if [[ "$raw_data_action" == "drop" ]]; then
+	echoi $e -n "dropping raw data..."
+	PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v src=$src  -f $DIR/sql/drop_raw.sql
+	source "$DIR/../includes/check_status.sh"
+elif [[ "$raw_data_action" == "move" ]]; then
+	echoi $e -n "moving raw data to schema \"staging\"..."
+	PGOPTIONS='--client-min-messages=warning' psql -d $DB_APP --set ON_ERROR_STOP=1 -q -v src=$src  -f $DIR/sql/move_raw.sql
+	source "$DIR/../includes/check_status.sh"
+else
+	echoi $e "keeping raw data"
+fi
+	
